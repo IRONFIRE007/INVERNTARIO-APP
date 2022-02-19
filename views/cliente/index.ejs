@@ -1,0 +1,104 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.87.0">
+    <title>Login con Node + JWT + MySQL</title>
+    <!-- Bootstrap core CSS -->
+<link href="../css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="../css/list.css" rel="stylesheet">
+  </head>
+  <body>
+
+<div class="container-fluid">
+  <div class="row">
+    <!-- Contenido principal   -->
+    <main class="col-md-9 ms-sm-auto col-lg-12 px-md-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h2>LIQOR</h2>
+      </div> 
+
+
+
+      <a type="button" class="register" href="/register" >
+        <i  class="fa fa-user-circle" aria-hidden="true"></i>
+      </a>
+
+      <a type="button" class="logout" href="logout" >
+        <i class="fa fa-sign-out" aria-hidden="true"></i>
+      </a>
+
+      <a type="button" class="back" href="/ventas" >
+        <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
+      </a>
+
+    
+      <div class="create">
+        <a href="/cliente/crear"  type="button">Crear Cliente</a>
+       </div>
+    </main>
+  </div>
+
+    <div class="container">
+
+
+      <% for( let cliente= 0; cliente < clientes.length; cliente++ ) { %>
+        <div class="box p" style="position:relative">
+         <h4>Nombre:<%=clientes[cliente].nombre%></h4>
+         <h3>Apellido:<%=clientes[cliente].apellido%></h3>
+         <h3>Telefono:<%=clientes[cliente].telefono%></h3>
+            <div class="content">
+             
+              <div class="btn-group-vertical" >
+                <form method="get" class="form-inline" action="/cliente/editar/<%=clientes[cliente].id%>">
+                     
+              <button class="btn  type="submit">Editar</button>
+              
+                </form>
+              
+                      </div>
+
+
+             <div class="btn-group-vertical"  >
+      
+                <form method="post" class="form-inline" action="/cliente/eliminar/<%=clientes[cliente].id%>">
+                    
+              <button type="submit" class="btn ">Borrar</button>
+              
+                </form>
+              
+                      </div>
+     
+     
+            </div>
+        </div>
+     
+        <% } %>
+     
+
+    </div>
+
+  </body>
+</html>

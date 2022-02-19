@@ -1,0 +1,5 @@
+SELECT * FROM producto WHERE producto.id NOT IN (SELECT producto_id FROM compra); //Productos sin vender
+
+SELECT * FROM clientes WHERE id NOT IN (SELECT clientes_id FROM compra); // Clientes  sin compras
+
+SELECT  * from compra WHERE fecha=(SELECT max(fecha) from compra );//Ultima compra

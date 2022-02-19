@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Consultas</title>
+    <!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+ <!-- Font Awesome cdn -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+ 
+    <!-- Custom styles for this template -->
+    <link href="css/list.css" rel="stylesheet">
+  </head>
+  <body>
+
+<div class="container-fluid">
+  <div class="row">
+    <!-- Contenido principal   -->
+    <main class="col-md-9 ms-sm-auto col-lg-12 px-md-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h2>LIQOR</h2>
+      </div> 
+
+
+
+      <a type="button" class="register" href="/register" >
+        <i  class="fa fa-user-circle" aria-hidden="true"></i>
+      </a>
+
+      <a type="button" class="logout r" href="logout" >
+        <i class="fa fa-sign-out" aria-hidden="true"></i>
+      </a>
+
+      <a type="button" class="back" href="/ventas" >
+        <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
+      </a>
+
+    
+      <div class="create">
+        <a href="/"  type="button">INICIO</a>
+       </div>
+    </main>
+  </div>
+
+    <div class="container">  
+         
+
+
+        
+       <div class="table">
+    <h1>Ultima Venta</h1>
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Descripcion</th>
+              <th scope="col">Cantidad</th>
+              <th scope="col">Fecha</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <% if (compra) { %>
+              <td><%=compra.descripcion%></td>
+              <td><%=compra.cantidad%></td>
+              <td><%=compra.fecha%></td>
+              <% } %>
+            </tr>
+          </tbody>
+        </table>
+
+       </div>
+
+      <br/>
+      <br/>
+
+   <div class="table">
+
+     <h1>Productos sin comprar</h1>
+            
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Nombre</th>
+              <th scope="col">Descripcion</th>
+              <th scope="col">Precio</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% if (productos) { %>
+            <% for( let producto= 0; producto < productos.length; producto++ ) { %>
+            <tr>
+           
+             <td><%=productos[producto].nombre%></td>
+             <td><%=productos[producto].descripcion%></td>
+              <td><%=productos[producto].precio%></td>
+         
+            </tr>
+            <% } %>  
+            <% } %>
+          </tbody>
+        </table>
+
+   </div>
+        
+          <br/>
+          <br/>
+
+          <div class="table">
+             <h1>Clientes que no han comprado</h1>
+            <table class="table">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Apellido</th>
+                  <th scope="col">Telefono</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% if (clientes) { %>
+                <% for( let cliente= 0; cliente < clientes.length; cliente++  ) { %>
+                <tr>
+               
+                  <td><%=clientes[cliente].nombre%></td>
+               <td><%=clientes[cliente].apellido%></td>
+              <td><%=clientes[cliente].telefono%></td>
+             
+                </tr>
+                <% } %>  
+                <% } %>
+              </tbody>
+            </table>
+          </div>
+      
+       
+
+    
+
+     
+      
+
+
+
+
+
+
+     
+
+
+
+
+
+
+
+
+
+
+      </div>
+
+
+
+
+
+
+  </body>
+</html>

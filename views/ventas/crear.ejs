@@ -1,0 +1,62 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Registrar Venta</title>
+    <!-- Bootstrap CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/signin.css" rel="stylesheet">
+  
+  
+  </head>
+  <body class="text-center">
+
+        
+ 
+    <main class="form-signin">
+
+
+      <form id="formLogin" action="/ventas/crear" method="post">
+
+
+        <select name="cliente_id" >
+            <% for( let cliente= 0; cliente < clientes.length; cliente++ ) { %>
+             
+                <option value=<%=clientes[cliente].id%>><%=clientes[cliente].nombre%></option>
+        
+            <% } %>
+           </select>
+    
+    
+           <select name="producto_id" >
+             <% for( let producto= 0; producto < productos.length; producto++ ) { %>
+             
+                <option value=<%=productos[producto].id%>><%=productos[producto].nombre%></option>
+        
+            <% } %>
+           </select>
+        
+    
+        <div class="form-floating">
+          <input type="number" class=""  name="cantidad"   placeholder="Cantidad" autocomplete="off">
+        </div>
+
+        <div class="form-floating">
+            <input type="text" class="descripcion" name="descripcion"   placeholder="Descripcion" autocomplete="off">
+          </div>
+
+
+          <div class="form-floating">
+            <button type="submit" class="w-100 btn btn-lg ">crear</button>
+          </div>
+      </form>
+    
+    </main>
+
+  
+
+  </body>
+</html>

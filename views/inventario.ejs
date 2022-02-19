@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inventario</title>
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Custom styles for this template -->
+  <link href="css/dashboard.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Contenido principal   -->
+      <main class="col-md-9 ms-sm-auto col-lg-12 px-md-4">
+        <div
+          class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+          <h2>LIQOR</h2>
+          <h2>
+            <% if (user) { %>
+              <span class="badge bg">
+                <%= data.nombreUsuario%>
+              </span>
+              <% } %>
+          </h2>
+        </div>
+
+        <div class="boxContainer">
+          <a type="button" class="register" href="/register">
+            <i class="fa fa-user-circle" aria-hidden="true"></i>
+          </a>
+
+        </div>
+        <div class="boxContainer">
+          <a type="button" class="logout" href="logout">
+            <i class="fa fa-sign-out" aria-hidden="true"></i>
+          </a>
+        </div>
+
+        <a type="button" class="back" href="/">
+          <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
+        </a>
+
+
+      </main>
+    </div>
+
+
+    <div class=" page">
+      <div class="content">
+
+        <a href="/proveedor">
+          <div class="imgBox">
+            <img class="mb-4" src="img/proveedor.jpg" alt="" width="100" height="100" />
+          </div>
+          <h4>Proveedores</h4>
+        </a>
+      </div>
+    </div>
+
+    <div class=" page">
+      <div class="content">
+
+        <a href="/product">
+          <div class="imgBox">
+            <img class="mb-4" src="img/productos.jpg" alt="" width="100" height="100" />
+          </div>
+          <h4>Productos</h4>
+        </a>
+      </div>
+    </div>
+
+    <div class=" page">
+
+      <a href="/category">
+
+        <div class="content">
+          <div class="imgBox">
+            <img class="mb-4" src="img/categoria.jpg" alt="" width="100" height="100" />
+          </div>
+          <h4>Categorias</h4>
+      </a>
+    </div>
+  </div>
+
+
+
+</body>
+
+</html>

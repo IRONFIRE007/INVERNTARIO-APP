@@ -1,0 +1,65 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <title>Editar Producto</title>
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/signin.css" rel="stylesheet">
+  </head>
+  <body class="text-center">
+
+        
+ 
+    <main class="form-signin">
+
+
+      <form id="formLogin" action="/product/actualizar" method="post">
+
+        <input type="hidden" name="id" value="<%=producto.id%>">
+           
+       <select name="categoria" >
+        <% for( let categoria= 0; categoria < categorias.length; categoria++ ) { %>
+         
+            <option value=<%=categorias[categoria].id%>><%=categorias[categoria].nombre%></option>
+    
+        <% } %>
+       </select>
+
+
+       <select name="proveedor" >
+         <% for( let proveedor= 0; proveedor < proveedores.length; proveedor++ ) { %>
+         
+            <option value=<%=proveedores[proveedor].id%>><%=proveedores[proveedor].nombre%></option>
+    
+        <% } %>
+       </select>
+        
+    
+        <div class="form-floating">
+          <input type="text" class="" name="nombre"  value="<%=producto.nombre%>" autocomplete="off">
+        </div>
+
+        <div class="form-floating">
+            <input type="text" class="descripcion" name="descripcion"   value="<%=producto.descripcion%>" autocomplete="off">
+          </div>
+
+
+          <div class="form-floating">
+            <input  class="" type="number" name="precio"value="<%=producto.precio%>"  autocomplete="off">
+          </div>
+    
+          <div class="form-floating">
+            <button type="submit" class="w-100 btn btn-lg ">Editar</button>
+          </div>
+      </form>
+    
+    </main>
+
+  
+
+  </body>
+</html>

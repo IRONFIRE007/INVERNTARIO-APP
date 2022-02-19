@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Editar Proveedor</title>
+    <!-- Bootstrap CSS -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="../../css/signin.css" rel="stylesheet" />
+  </head>
+  <body class="text-center">
+    <main class="form-signin">
+      <form id="formLogin" action="/proveedor/actualizar" method="post">
+        <input
+          type="hidden"
+          class=""
+          name="id"
+          value="<%=proveedor.id%>"
+          autocomplete="off"
+        />
+
+        <div class="form-floating">
+          <input
+            type="text"
+            class=""
+            name="nombre"
+            value="<%=proveedor.nombre%>"
+            autocomplete="off"
+          />
+        </div>
+
+        <div class="form-floating">
+          <input
+            type="text"
+            class=""
+            name="rut"
+            value="<%=proveedor.rut%>"
+            autocomplete="off"
+          />
+        </div>
+
+        <div class="form-floating">
+          <input
+            type="email"
+            class=""
+            name="correo"
+            value="<%=proveedor.correo%>"
+            autocomplete="off"
+          />
+        </div>
+
+        <div class="form-floating">
+          <button type="submit" class="w-100 btn btn-lg">Editar</button>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>

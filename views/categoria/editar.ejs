@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Editar Categoria</title>
+    <!-- Bootstrap CSS -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../css/signin.css" rel="stylesheet" />
+  </head>
+  <body class="text-center">
+    <main class="form-signin">
+      <form id="formLogin" action="/category/actualizar" method="post">
+        <input type="hidden" name="id" value="<%=categoria.id%>" />
+        <div class="form-floating">
+          <input
+            type="text"
+            class=""
+            name="nombre"
+            id="nombre"
+            value="<%=categoria.nombre%>"
+            autocomplete="off"
+          />
+        </div>
+
+        <div class="form-floating">
+          <button type="submit" class="w-100 btn btn-lg">Editar</button>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>

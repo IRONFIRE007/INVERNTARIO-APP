@@ -1,0 +1,111 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Producto</title>
+    <!-- Bootstrap core CSS -->
+<link href="../css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Custom styles for this template -->
+    <link href="../css/list.css" rel="stylesheet">
+  </head>
+  <body>
+
+<div class="container-fluid">
+  <div class="row">
+    <!-- Contenido principal   -->
+    <main class="col-md-9 ms-sm-auto col-lg-12 px-md-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h2>LIQOR</h2>
+      </div> 
+
+
+
+      <a type="button" class="register" href="/register" >
+        <i  class="fa fa-user-circle" aria-hidden="true"></i>
+      </a>
+
+      <a type="button" class="logout" href="logout" >
+        <i class="fa fa-sign-out" aria-hidden="true"></i>
+      </a>
+
+      <a type="button" class="back" href="/inventario" >
+        <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
+      </a>
+
+    
+      <div class="create">
+        <a href="/product/crear"  type="button">Crear Producto</a>
+       </div>
+    </main>
+  </div>
+
+    <div class="container">
+
+
+      <% for( let producto= 0; producto < productos.length; producto++ ) { %>
+        <div class="box client" style="position:relative">
+         <h4>Nombre:<%=productos[producto].nombre%></h4>
+         <h3>Desc:<%=productos[producto].descripcion%></h3>
+          <h3>Precio:<%=productos[producto].precio%></h3>
+
+
+         <% for( let categoria= 0; categoria < categorias.length; categoria++ ) 
+         { %>  
+            <% if(categorias[categoria].id===productos[producto].categoria_id)
+            { %> <h3>Categoria:<%=categorias[categoria].nombre%></h3>  <% }
+            
+             %>
+            
+            <% } %>
+
+            <% for( let proveedor= 0; proveedor < proveedores.length; proveedor++ ) 
+         { %>  
+            <% if(proveedores[proveedor].id===productos[producto].proveedor_id)
+            { %> <h3>Proveedor:<%=proveedores[proveedor].nombre%></h3>  <% }
+            
+             %>
+            
+            <% } %> 
+
+
+
+            <div class="content">
+             
+              <div class="btn-group-vertical" >
+                    <form method="get" class="form-inline" action="/product/editar/<%=productos[producto].id%>">
+                         
+                  <button class="btn " type="submit">Editar</button>
+                  
+                    </form>
+                  
+                          </div>
+
+
+                 <div class="btn-group-vertical"  >
+          
+                    <form method="post" class="form-inline" action="/product/eliminar/<%=productos[producto].id%>">
+                        
+                  <button type="submit" class="btn ">Borrar</button>
+                  
+                    </form>
+                  
+                          </div>
+     
+     
+            </div>
+
+          </div> 
+            <% } %>  
+      
+     
+        
+     
+
+    </div>
+
+  </body>
+</html>
